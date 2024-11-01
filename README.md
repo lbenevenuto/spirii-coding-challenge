@@ -36,6 +36,7 @@
 Clone the repository and run
 
 ```bash
+cp .env.example .env
 npm install -g json-server
 json-server --watch transaction_items.json
 bun install
