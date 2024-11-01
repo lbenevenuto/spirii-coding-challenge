@@ -57,3 +57,5 @@ bun run db:studio
 * fetch all transactions - GET /api/fetch
 * getRequestedPayouts - GET /api/transactions/payouts
 * getAggregatedData - GET /api/transactions/[userId]
+
+# *** To fill the DB with the transactions call `/api/fetch` - after that it will run every 60 seconds
