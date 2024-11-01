@@ -54,5 +54,6 @@ bun run db:studio
 
 ** userId can be found in the file transaction_items.json
 
+* fetch all transactions - GET /api/fetch
 * getRequestedPayouts - GET /api/transactions/payouts
 * getAggregatedData - GET /api/transactions/[userId]
