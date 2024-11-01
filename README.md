@@ -1,38 +1,50 @@
-# sv
+# Recruiting Challenge
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Assumptions
+- As I don't have any API to call, I'm using a json-server to simulate the API, so the response is a little different from the one in the challenge
+```json
+{
+	"first": 1,
+	"prev": 1499,
+	"next": null,
+	"last": 1500,
+	"pages": 1500,
+	"items": 3000,
+	"data": [
+		{
+			"id": "7d7bfd4e-b6f8-42f5-8105-fc2c11b36b17",
+			"userId": "358850",
+			"createdAt": "2023-03-24T15:11:49.000Z",
+			"type": "earned",
+			"amount": 28.36
+		},
+		{
+			"id": "730346be-cb0c-49cc-aba0-c6b99b38f4cc",
+			"userId": "358850",
+			"createdAt": "2024-06-16T09:17:32.000Z",
+			"type": "paid out",
+			"amount": 53.85
+		}
+	]
+}
+```
+- With json-server I can't do a lot of things, like filtering by date, so I'm loading all the transactions
+- If I could filter by date, I could save the last date I fetched and only fetch the new transactions
+- The balance in Euros I'm calculating as total earned - total spent - total paid_out, I don't know if this is the correct way to calculate it
+- The Service having millions of requests per day I would deploy to Cloudflare pages. https://pages.cloudflare.com/
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+Clone the repository and run
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npm install -g json-server
+json-server --watch transaction_items.json
+bun install
+bun run db:push
+bun run dev
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To check the DB you can run
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run db:studio
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
