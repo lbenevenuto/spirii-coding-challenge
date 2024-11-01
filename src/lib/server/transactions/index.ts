@@ -20,7 +20,7 @@ export async function getAggregatedData(userId: string) {
               SUM(CASE WHEN type = 'paid out' THEN amount ELSE 0 END) AS paid_out,
               SUM(CASE WHEN type = 'payout' THEN amount ELSE 0 END)   AS payout
        FROM transactions
-       WHERE userId = ${userId}`
+       WHERE userId = '${userId}'`
 		)
 	);
 
