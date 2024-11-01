@@ -49,3 +49,10 @@ To check the DB you can run
 ```bash
 bun run db:studio
 ```
+
+## Routes
+
+** userId can be found in the file transaction_items.json
+
+* getRequestedPayouts - GET /api/transactions/payouts
+* getAggregatedData - GET /api/transactions/[userId]
