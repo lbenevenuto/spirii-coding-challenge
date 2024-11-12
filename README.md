@@ -1,7 +1,9 @@
 # Recruiting Challenge
 
 ## Assumptions
+
 - As I don't have any API to call, I'm using a json-server to simulate the API, so the response is a little different from the one in the challenge
+
 ```json
 {
 	"first": 1,
@@ -28,6 +30,7 @@
 	]
 }
 ```
+
 - With json-server I can't do a lot of things, like filtering by date, so I'm loading all the transactions
 - If I could filter by date, I could save the last date I fetched and only fetch the new transactions
 - The balance in Euros I'm calculating as total earned - total spent - total paid_out, I don't know if this is the correct way to calculate it
@@ -52,10 +55,10 @@ bun run db:studio
 
 ## Routes
 
-** userId can be found in the file transaction_items.json
+\*\* userId can be found in the file transaction_items.json
 
-* fetch all transactions - GET /api/fetch
-* getRequestedPayouts - GET /api/transactions/payouts
-* getAggregatedData - GET /api/transactions/[userId]
+- fetch all transactions - GET /api/fetch
+- getRequestedPayouts - GET /api/transactions/payouts
+- getAggregatedData - GET /api/transactions/[userId]
 
-# *** To fill the DB with the transactions call `/api/fetch` - after that it will run every 60 seconds
+# \*\*\* To fill the DB with the transactions call `/api/fetch` - after that it will run every 60 seconds
